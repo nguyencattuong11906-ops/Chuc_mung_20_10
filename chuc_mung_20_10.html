@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc mừng 20/10 💐</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffe6f2, #fff9fb, #fff0f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+    overflow: hidden;
+  }
+
+  .card {
+    text-align: center;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    position: relative;
+    overflow: hidden;
+    max-width: 850px;
+  }
+
+  h1 {
+    font-size: 36px;
+    color: #ff4d94;
+    margin-bottom: 10px;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ffb3d9; }
+    to { text-shadow: 0 0 20px #ff66b3; }
+  }
+
+  p {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+  }
+
+  .heart {
+    color: #ff4da6;
+    font-size: 40px;
+    animation: beat 1s infinite;
+  }
+
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* Cánh hoa rơi */
+  .petal {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>💐 Chúc mừng 20/10 💐</h1>
+
+  <img src="lopK21.jpg" alt="Lớp Điều dưỡng K21">
+
+  <p>
+    <strong>Chúc các bạn nữ Lớp Điều dưỡng K21</strong><br>
+    luôn xinh đẹp, tự tin và toả sáng<br>
+    như màu áo của chúng ta nhé! ✨
+  </p>
+
+  <div class="heart">❤️</div>
+  <p style="font-size:14px;color:#777;">— Gửi lời yêu thương từ các bạn nam K21 💖</p>
+</div>
+
+<script>
+  // Hiệu ứng hoa rơi
+  function createPetal() {
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = 4 + Math.random() * 3 + "s";
+    petal.style.background = `hsl(${Math.random() * 20 + 330}, 80%, 80%)`;
+    document.body.appendChild(petal);
+    setTimeout(() => petal.remove(), 7000);
+  }
+  setInterval(createPetal, 200);
+</script>
+
+</body>
+</html>
